@@ -1,0 +1,38 @@
+.h-main {
+    text-decoration:underline;
+    text-align: center;
+}
+.span-important {
+    font-weight:bold;
+}
+
+.img-main {
+    float:center;
+}
+
+.p-solution{
+    text-align:center;
+}
+.police-vue{
+    font-family:courier , serif;
+}
+.police-jquerry{
+    font-weight:bold;
+}
+.ul-first{
+    background-color:chartreuse;
+    font-style:italic;
+}
+.ul-second{
+    background-color:salmon;
+    font-style:italic;
+}
+.p-urgent{
+    color:red;
+}
+.p-tests{
+    font-weight:bold;
+}
+.a-link{
+    text-align:center;
+}
