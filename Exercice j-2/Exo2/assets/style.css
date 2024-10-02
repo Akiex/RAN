@@ -1,0 +1,31 @@
+*{
+    box-sizing:border-box;
+}
+
+.box-1{
+    border:solid 1px black;
+    background-color:red;
+    margin:20px;
+    padding:15px;
+}
+
+.box-2{
+    border:solid 1px black;
+    background-color:yellow;
+    margin:20px;
+    padding:15px;
+}
+.box-3{
+    border:solid 1px black;
+    background-color:green;
+    margin:20px;
+    padding:15px;
+}
+div p {
+    margin:0px 15px 0px 15px
+}
+
+.boxtest{
+    Border:black solid 1px
+    background-color blue;
+}

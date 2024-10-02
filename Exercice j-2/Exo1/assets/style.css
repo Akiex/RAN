@@ -1,0 +1,25 @@
+*{
+    box-sizing:border-box;
+}
+body{
+    margin:0px;
+}
+.box-1{
+    background-color:red;
+    border:1px solid black;
+    padding-bottom:10%;
+    margin:0% 90% 0% 0%;
+}
+
+.box-2{
+    background-color:yellow;
+    border:1px solid black;
+    padding-bottom:15%;
+    margin:0% 85% 0% 0%;
+}
+.box-3{
+    background-color:green;
+    border:1px solid black;
+    padding-bottom:20%;
+    margin:0% 80% 0% 0%;
+}

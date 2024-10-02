@@ -64,13 +64,16 @@
 }
 
 .table-top{
+    border:1px solid black;
     background-color:lightskyblue;
 }
 
 .table-mid{
+    border:1px solid black;
     background-color:lightblue;
 }
 
 .table-bot{
+    border:1px solid black;
     background-color:lightskyblue;
 }
