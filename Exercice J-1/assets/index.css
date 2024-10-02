@@ -7,32 +7,70 @@
 }
 
 .img-main {
-    float:center;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }
+
+.img-token{
+    display:relative;
+    vertical-align:middle;
+    
+}
+
 
 .p-solution{
     text-align:center;
 }
+
 .police-vue{
     font-family:courier , serif;
 }
+
 .police-jquerry{
     font-weight:bold;
 }
+
 .ul-first{
     background-color:chartreuse;
     font-style:italic;
 }
+
 .ul-second{
     background-color:salmon;
     font-style:italic;
 }
+
 .p-urgent{
     color:red;
 }
+
 .p-tests{
     font-weight:bold;
 }
+
 .a-link{
+    display:block;
     text-align:center;
+}
+
+.border{
+    border-width:4px , solid;
+    border-style:solid;
+    border-color:lightseagreen;
+    border-spacing:0px;
+    margin:auto;
+    
+}
+
+.table-top{
+    background-color:lightskyblue;
+}
+
+.table-mid{
+    background-color:lightblue;
+}
+
+.table-bot{
+    background-color:lightskyblue;
 }
