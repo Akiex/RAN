@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+html{
+    font-size:62.5%;
+    /* passer de 16px a 10px*/
+    /* pour qu'un calcul soit plus simple 1.2em = 1.2 x 10 = 12px (pour éviter un calcul compliqué*/)
+}
+body{
+    font-size:16px/* on reset a 16 PX qui est la valeur par défaut*/;
+    margin:0;
+}
+
+.box2{
+    border: 2px solid black;
+    background-color:lime;
+    padding:1em;
+    font-size:12px;
+    /* modifier la taille de police du block avec font-size applique le padding
+    sinon elle prend le parents donc 16px par défaut en l'occurence*/
+    
+}
+.box3{
+    border: 2px solid black;
+    background-color:yellow;
+    padding:1em;
+    font-size:0.5em;
+    /* La taille de cette boite est impacté par la boite parents (box2)*/
+    
+    
+}

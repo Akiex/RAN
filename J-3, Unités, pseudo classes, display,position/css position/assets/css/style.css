@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+html{
+    font-size:62.5%;
+}
+body{
+    margin:0px;
+    font-size:16px;
+}
+.header{
+    position:fixed;
+    background-color:grey;
+    width:100%;
+    top:0;
+    left:0;
+}

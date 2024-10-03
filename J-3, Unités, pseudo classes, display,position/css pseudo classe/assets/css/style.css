@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+html{
+    font-size:62.5%;
+}
+body{
+    margin:0px;
+    font-size:16px;
+}
+.test a{
+color:green;
+text-decoration:none;
+}
+/* Le mouse hover*/
+.test a:hover{
+    color: lime;
+    background-color:black;
+}
+/*quand la souris est enfoncé sur le lien*/
+.test a:active{
+    color:yellow;
+}
+/*Couleur une fois que le lien est visité*/
+.test a:visited {
+    color:grey;
+}

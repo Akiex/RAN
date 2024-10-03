@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+html{
+    font-size:62.5%;
+}
+body{
+    margin:0px;
+    font-size:16px;
+}
+.test{
+    Box-shadow:0px 3px 5px rgba(0, 0, 0, 0.1);
+    padding-top:1rem;
+}
+.main{
+    text-align:center;
+}
+.navbar-navdefault{
+    text-align:center;
+}
+menu li{
+    display:inline;
+    margin:1em;
+    font-weight:bold;
+}
+.box-cop{
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:1em;
+    font-size:1.2rem;
+    
+}
+.accueil{
+    color:red;
+}
+.title{
+    box-shadow: 1px 1px 1px black;
+    padding-left:2em;
+    padding-bottom:0.1em;
+    padding-top:0.1em;
+}
+.p-actu{
+    text-align:center;
+    color:grey;
+    font-size:1.1em;
+    font-weight:bold;
+}
+.actu1{
+    border:1px solid black;
+    width:30em;
+    margin:1em 1em 1em 1em;
+    display:inline-block;
+    text-align:start;
+
+}
+.actu2{
+    border:1px solid black;
+    width:30em;
+    margin:1em 1em 1em 1em;
+    display:inline-block;
+    text-align:start;
+}
+.actu3{
+    border:1px solid black;
+    width:30em;
+    margin:1em 1em 1em 1em;
+    display:inline-block;
+    text-align:start;
+}
+.actu4{
+    border:1px solid black;
+    width:30em;
+    margin:1em 1em 1em 1em;
+    display:inline-block;
+    text-align:start;
+}
+.title-actu{
+    font-weight:bold;
+    text-align:start;
+}
+.main-actu{
+    text-align:center;
+}

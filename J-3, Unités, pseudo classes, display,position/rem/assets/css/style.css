@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+html{
+    /* font-size de 16px natif*/
+}
+body{
+    margin:0px;
+}
+
+.box2{
+    border: 2px solid black;
+    background-color:lime;
+    padding:1rem;
+    font-size:0.85rem;
+    /* A vérifier dans l'inspecteur d'élément pour voir la taille de police par
+    defaut */
+    
+}
+.box3{
+    border: 2px solid black;
+    background-color:yellow;
+    padding:1rem;
+    
+    
+}
