@@ -11,12 +11,11 @@ body{
 /**************** HEADER **************/
 .header{
     background-color:lightgreen;
-    display:inline;
     position:fixed;
-    width:100%;
-    top:0;
     text-align:center;
-    border:1px solid grey;
+    width:100%;
+    border:2px solid grey;
+
 }
 .nav-bar menu{
     display:inline-block;
@@ -32,19 +31,37 @@ body{
     
     
 }
-.nav-bar menu li a{
+.nav-bar a{
     text-decoration:none;
     display:block;
     color:white;
     padding:1em;
     margin:0;
+    text-align:center;
     
 }
-.nav-bar menu li a:hover{
+.nav-bar a:hover{
     background-color:lightgreen;
     color:white;
+    border-bottom:1px solid grey;
     
 }
 .sous-menu{
     display:none;
+    text-align:center;
+    margin:0;
+    padding:0;
+    position:fixed;
+    background-color:green;
+    border:2px solid green;
+    
 }
+nav ul::after{
+    content:"";
+    display:table;
+    clear:both;
+}
+.nav-bar>menu li:hover .sous-menu{
+    display:block;
+}
+
