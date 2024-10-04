@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+html{
+    font-size:62.5%;
+}
+body{
+    margin:0px;
+    font-size:16px;
+}
+.box{
+    border:2px solid orange;
+    background-color:wheat;
+    height:25%;
+    
+}
+.flex{
+    height:75vh;
+    background-color:brown;
+    
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    
+    row-gap:50px;
+
+    justify-content:center;
+    align-items:center;
+
+}

@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+html{
+    font-size:62.5%;
+}
+body{
+    margin:0px;
+    font-size:16px;
+}
+
+.box{
+    border:2px solid orange;
+    background-color:wheat;
+    width:25%;
+}
+
+/************** Tout sur une ligne ***************/
+/************* disposition vertical **************/
+.flex{
+    display:flex;
+    flex-direction:column;
+    background-color:red;
+}
+/******** pour le responsive Permet de déplacer selon la taille d'écran ************/
+/****** Taille de la boite ******/
+.flex {
+    /*column-gap:2em;*/
+    flex-wrap:wrap;
+    height:75vh;
+    /*row-gap:2em;*/
+    /*gap:2em;*/ /***Column + row gap******/
+}
+
+
+/*Alignement vertical*/
+.flex{
+    justify-content:space-between;
+    /* Flex-start (gauche) / flex-end (droite) /space around(meme taille)
+    space-between(meme espace entre boite) / space-evenly (meme espace bordure)
+    center ( tout au milieu) */
+}
+/*Alignement horizontal*/
+.flex{
+    align-items:stretch;
+    /*Flex-start(tout en haut)/flex-end(tout en bas)/center ( milieu)
+    stretch(rempli tout l'espace)*/
+}
