@@ -1,0 +1,48 @@
+
+body {
+    margin:16px;
+}
+
+.box{
+    border:2px solid orange;
+    background-color:wheat;
+}
+.grid {
+    display:grid;
+    gap:1em;
+    grid-template-rows: repeat(4, 100px);
+    grid-template-columns: repeat(5, 100px);
+}
+/*les éléments sont positionnés entre les bordure spécifié*/
+.box1{
+    background-color:navy;
+    grid-row-start:1;
+    grid-row-end:2;
+    grid-column-start:1;
+    grid-column-end:2;
+}
+/*fusion de deux colonnes*/
+.box1{
+    background-color:navy;
+    grid-row-start:1;
+    grid-row-end:2;
+    grid-column-start:1;
+    grid-column-end:3;
+}
+/*fusion de deux lignes*/
+.box1{
+    background-color:navy;
+    grid-row-start:1;
+    grid-row-end:3;
+    grid-column-start:1;
+    grid-column-end:3;
+}
+/*fusion de n lignes et n colonnes*/
+.box1{
+    background-color:navy;
+    grid-row-start:3;
+    grid-row-end:5;
+    grid-column-start:2;
+    grid-column-end:4;
+}
+
