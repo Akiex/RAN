@@ -10,69 +10,68 @@ body{
 }
 /**************** HEADER **************/
 .header{
+    margin:0;
+    top:0;
     background-color:darkgrey;
     position:fixed;
-    text-align:center;
     width:100%;
     border:2px solid grey;
+}
+.nav-bar img{
+    width:75%;
+}
+.nav-bar{
+    display:grid;   
+    gap: 16px;
+    grid-template-rows:repeat(2,3rem);
+    grid-template-columns:repeat(25, 100px);
+}
+.box1{
+    grid-row-start:1;
+    grid-row-end:2;
+    grid-column-start:1;
+    grid-column-end:2;
+}
+.box2{
+    grid-row-start:1;
+    grid-row-end:2;
+    grid-column-start:2;
+    grid-column-end:3;
+}
+.box3{
+    grid-row-start:1;
+    grid-row-end:2;
+    grid-column-start:21;
+    grid-column-end:22;
+}
+.box4{
+    grid-row-start:1;
+    grid-row-end:2;
+    grid-column-start:22;
+    grid-column-end:23;
+}
+.box5{
+    grid-row-start:1;
+    grid-row-end:2;
+    grid-column-start:23;
+    grid-column-end:24;
+}
+.box6{
+    grid-row-start:1;
+    grid-row-end:2;
+    grid-column-start:24;
+    grid-column-end:25;
+}
+/************************************BODY*************************************/
+.main{
 
-}
-.nav-bar menu{
-    display:inline-block;
-    background-color:grey;
-    padding:1em;
-    list-style-type:none;
-    color:white;
-    border: solid 1px black;
-    margin:0;
-    border-radius:30px;
-}
-.nav-bar menu li{
-    display:relative;
-    
-    
-}
-.nav-bar a{
-    text-decoration:none;
-    display:block;
-    color:white;
-    padding:1em;
-    margin:0;
-    text-align:center;
-    
-}
-.nav-bar a:hover{
-    background-color:darkgrey;
-    color:white;
-    border-bottom:1px solid grey;
-    border-radius:30px;
-    
-}
-.sous-menu{
-    display:none;
-    text-align:center;
-    margin:0;
-    padding:0;
-    position:absolute;
-    background-color:grey;
-    border:2px solid Grey;
-    border-radius:30px;
-    
-}
-nav ul::after{
-    content:"";
-    display:table;
-    clear:both;
-}
-.nav-bar>menu li:hover .sous-menu{
-    display:block;
 }
 
 /*********************************** FOOTER **********************************/
 .footer{
     background-color:black;
     padding:1em;
-    position:absolute;
+    position:fixed;
     bottom:0;
     left:0;
     right:0;
