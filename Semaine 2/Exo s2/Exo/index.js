@@ -255,79 +255,145 @@
 // *****************************************************************************
 
 // Machine a laver
-let eau;
-let chaleur;
-let tps;
+// let eau;
+// let chaleur;
+// let tps;
 
-function cycleTambours(nTours) {
-    for (let i = 0; i < Ntour; i++) {
-    }
+// function cycleTambours(nTours) {
+//     for (let i = 0; i < Ntour; i++) {
+//     }
     
-}
-function essorage() {
-    while(tps<30) {
-        cycleTambours()
-    }
-}
+// }
+// function essorage() {
+//     while(tps<30) {
+//         cycleTambours()
+//     }
+// }
 
-function vidange() {
-    while(eau>0) {
-        vidangeEau()
-    }
-}
+// function vidange() {
+//     while(eau>0) {
+//         vidangeEau()
+//     }
+// }
 
-function remplissage() {
-    while(eau<50) {
-        ouvrirVanneEau()
-    }
-    while (chaleur<40) {
-        allumerChauffage()
-    }
-}
+// function remplissage() {
+//     while(eau<50) {
+//         ouvrirVanneEau()
+//     }
+//     while (chaleur<40) {
+//         allumerChauffage()
+//     }
+// }
 
-function adoucissant() {
-    remplissage();
-    console.log('mettre adoucissant');
-    cycleTambours(10);
-    vidange();
-}
+// function adoucissant() {
+//     remplissage();
+//     console.log('mettre adoucissant');
+//     cycleTambours(10);
+//     vidange();
+// }
 
-function rincage() {
-    remplissage();
-    cycleTambours(10);
-    vidange();
+// function rincage() {
+//     remplissage();
+//     cycleTambours(10);
+//     vidange();
     
-}
+// }
 
-function lavage() {
-    remplissage();
+// function lavage() {
+//     remplissage();
     
-    mettreLessive();
+//     mettreLessive();
     
-    for(let i = 1; i<= 2; i++){
-        cycleTambours(20);
-    }
-    vidange();
-}
+//     for(let i = 1; i<= 2; i++){
+//         cycleTambours(20);
+//     }
+//     vidange();
+// }
 
 
 
-function lavage() {
-    remplissage();
-    console.log('Mettre la lessive');
-    cycleTambours(20);
-    vidange();
-}
+// function lavage() {
+//     remplissage();
+//     console.log('Mettre la lessive');
+//     cycleTambours(20);
+//     vidange();
+// }
 
-function cycle() {
-    lavage();
-    for(let i = 0; i = 4; i++) {
-        rincage();
-    }
-    adoucissant();
-    for (let i = 0; i = 4; i++) {
-        rincage();
-    }
-    essorage();
+// function cycle() {
+//     lavage();
+//     for(let i = 0; i = 4; i++) {
+//         rincage();
+//     }
+//     adoucissant();
+//     for (let i = 0; i = 4; i++) {
+//         rincage();
+//     }
+//     essorage();
     
+// }
+//*****************************************************************************
+
+function JDR() {
+
+    let choixJoueur1 = prompt('Définissez vos point de vie entre 1 et 100');
+    let choixJoueur2 = prompt('Définissez vos point d\'attaque entre 1 et 3');
+
+    let pvJoueur = Number(choixJoueur1);
+    console.log('Point de vie du joueur sont à : \ ' + pvJoueur);
+
+    let paJoueur = Number(choixJoueur2);
+    console.log('Point d\'attaque du joueur sont à : \ ' + paJoueur);
+
+    let pvEnnemi = Math.ceil(Math.random() * 100); //ceil = ~ au superieur
+    console.log('Point de vie de l\'Ennemi sont à : \ ' + pvEnnemi);
+
+    let paEnnemi = Math.ceil(Math.random() * 3); //floor = ~ au inferieur
+    console.log('Point d\'attaque de l\'Ennemi sont à : \ ' + paEnnemi);
+
+//*****************************************************************************
+
+    while (pvJoueur > 0 && pvEnnemi > 0) {
+        let resultatAttaque = Math.ceil(Math.random() * 20 + 1);
+        if (resultatAttaque > 18) {
+            pvEnnemi = pvEnnemi - paJoueur * 2;
+            console.log('Réussite critique \ '+'les pv de l\'ennemi sont a : \ '+pvEnnemi);
+        } else if (resultatAttaque < 5) {
+            pvJoueur = pvJoueur - 1;
+            console.log('Echec critique \ '+'les pv du joueur sont a : \ '+pvJoueur);
+        } else {
+            pvEnnemi = pvEnnemi - paJoueur;
+            console.log('Le joueur attaque \ '+'les point de vie de l\'ennemi sont a:\ '+pvEnnemi);
+        }
+    
+
+if (pvEnnemi > 0) {
+    resultatAttaque = Math.ceil(Math.random() * 20 + 1);
+    if (resultatAttaque > 18) {
+        pvJoueur = pvJoueur - paEnnemi * 2;
+        console.log('Réussite critique,\ '+'les pv du Joueur sont a :\ '+pvJoueur);
+    } else if (resultatAttaque < 5) {
+        pvEnnemi = pvEnnemi - 1;
+        console.log('Echec critique,\ '+'les pv de l\'ennemi sont a :\ '+pvEnnemi);
+    } else {
+        pvJoueur = pvJoueur - paEnnemi;
+        console.log('L\'ennemi attaque,\ '+'les point de vie du joueur sont a :\ '+pvJoueur);
+     }
+    }
 }
+
+
+console.log('Les point de vie du joueur \ ' + pvJoueur);
+console.log('Les point de vie de l\'ennemi \ ' + pvEnnemi);
+
+if (pvEnnemi <= 0) {
+    return "Le joueur a gagné";
+} else {
+    return " L\'ennemi a gagné";
+}
+
+}
+let resultat = JDR();
+
+console.log((resultat));
+
+
