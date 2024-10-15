@@ -1,0 +1,17 @@
+
+.lime-square {
+    display: none;
+    width: 5em;
+    height: 5em;
+    border: 1px solid black;
+    background-color: lime;
+}
+.button {
+    display: block;
+    width: 25%;
+    margin: 0 auto;
+    background-color: lightgrey;
+}
+.visible {
+    display: block;
+}
