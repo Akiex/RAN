@@ -5,10 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let popupDOM = document.querySelector('.popup-help')
         popupDOM.classList.add('visible')
-
-
-
-    })
+})
     // 2. Lorsque l'utilisateur clique sur la croix en haut à droite de la popup d'aide (classe close-button), fermer la popup
 
 
@@ -28,19 +25,15 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
     // 4. Lorsque l'utilisateur appuie sur la touche F (comme fullscreen)
-    let toggleHeadFootDOM = document.querySelectorAll('.header, .footer');
-        
     
     document.addEventListener('keydown', function(event){
-        let key = event.key.toLowerCase;
-        
+        let key = event.key
+        let headerDOM = document.querySelector('.header')
+        let footerDOM = document.querySelector('.footer')
         if(key === 'f') {
-            toggleHeadFootDOM.forEach(objet => {
-                objet.classList.toggle('hidden');
-        
-            }) ;  
-        }
-    
+                headerDOM.classList.toggle('hidden');
+                footerDOM.classList.toggle('hidden');
+        };
     // Afficher / masquer le header et le footer
 });
     

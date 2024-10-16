@@ -1,0 +1,31 @@
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+.Terrain {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.case{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: white;
+}
+.x {
+    background-color:blue;
+}
+.o {
+    background-color:red;
+}

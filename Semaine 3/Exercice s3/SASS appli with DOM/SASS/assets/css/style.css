@@ -201,5 +201,5 @@ div.my-account-panel .picture {
     display:none;
 }
 .hidden {
-    display:none;
+    visibility:hidden;
 }
