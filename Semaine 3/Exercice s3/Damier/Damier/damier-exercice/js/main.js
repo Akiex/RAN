@@ -156,8 +156,8 @@ function bobbyMove(event) {
 }
 
 function updateBobbyPosition() {
-  bobby.style.top = `${bobbyPosition.y * 48}px`;
-  bobby.style.left = `${bobbyPosition.x * 48}px`;
+  bobby.style.top = `${bobbyPosition.y * 3}rem`;
+  bobby.style.left = `${bobbyPosition.x * 3}rem`;
 }
 
 function moveCat() {
@@ -175,8 +175,8 @@ function moveCat() {
 }
 
 function updateCatPosition() {
-  cat.style.top = `${catPosition.y * 48}px`;
-  cat.style.left = `${catPosition.x * 48}px`;
+  cat.style.top = `${catPosition.y * 3}rem`;
+  cat.style.left = `${catPosition.x * 3}rem`;
 }
   // Les fonctions (appelées par les Event Listener) sont déclarées ici.
 

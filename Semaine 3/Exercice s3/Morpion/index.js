@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
  let board = ['', '', '', '', '', '', '', '', ''];
  let joueur = ['X', 'O'];
  let round = joueur[0];
+ let reponse = document.querySelector('.reponse')
 
 
 
@@ -14,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
   // Vérification des lignes
   // si le l'élément a l'indix "i" n'est pas vide et
   //  qu'il est égale a l'index i+2 et i+3
-  for (let i = 0; i < 9; i += 3) {
+  for (let i = 0; i < 8; i += 3) {
    if (board[i] !== '' && board[i] === board[i + 1] && board[i] === board[i + 2]) {
     return true;
    }
   }
   // Vérife des colonnes
-  for (let i = 0; i < 9; i += 3) {
+  for (let i = 0; i < 8; i += 3) {
    if (board[i] !== '' && board[i] === board[i + 3] && board[i] === board[i + 6]) {
     return true;
    }
@@ -33,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
    return true;
   }
   return false;
+ 
+  
  }
 
  function checkDraw() {
@@ -41,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
  function cellClick(event) {
+  
   let index = parseInt(event.target.dataset.index);
   // vérification si la partie est toujours en cours et que la case et vide
   if (board[index] === '' && gameOn) {
@@ -56,22 +60,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (checkWin()) {
    gameOn = false;
-   alert(`le joueur ${round} a gagné !`);
+   reponse.textContent = (`le joueur ${round} a gagné !`);
   }
   else if (checkDraw()) {
    gameOn = false;
-   alert('match nul !');
+   reponse.textContent = ('match nul !');
   }
  }
 
-function test(event) {
- let index = parseInt(event.target.dataset.index);
- if(board[index] === '' && gameOn){
-  caseDOM.classList.add('x')
- }
-}
+
  caseDOM.forEach(cell => {
-  cell.addEventListener('click', test);
+  cell.addEventListener('mousedown', cellClick);
  });
 
 
