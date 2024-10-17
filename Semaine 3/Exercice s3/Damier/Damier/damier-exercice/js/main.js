@@ -49,122 +49,209 @@ function createDamier() {
 // Uniquement si nécéssaire.
 let board = document.querySelector('.checkerboard');
 let cat = document.querySelector('.cat');
-let bobby = document.querySelector('.bobby');
 let cell = document.querySelectorAll('.js-cell');
+let bobby = board.querySelector('.bobby');
 let buttonDamier = document.querySelector('.js-damier');
 let buttonDisco = document.querySelector('.js-disco');
 let buttonLaby = document.querySelector('.js-labyrinth');
+let bobbyPosition = {x: 0, y: 0};
+let catPosition = {x: 0, y: 0};
 
 /**************************************************************/
 /*                        Fonctions                           */
 /**************************************************************/
 function clearCheckboard() {
-  cell.innerHTML('');
-  
+  for(let i = 0; i < cell.length; i++){
+    cell[i].classList.remove('black')
+    cell[i].classList.remove('disco-color1')
+    cell[i].classList.remove('disco-color2')
+    cell[i].classList.remove('disco-color3')
+    cell[i].classList.remove('disco-color4')
+    cell[i].classList.remove('disco-color5')
+  }
+
 }
+
 function createDamier() {
-  
-  for(let i = 0; i < 64; i++){
-    
-    if((i % 2 === 0 && Math.floor(i / 8) % 2 === 0) || (i % 2 !== 0 && Math.floor(i / 8) % 2 !== 0)){
+
+  for (let i = 0; i < 64; i++) {
+
+    if ((i % 2 === 0 && Math.floor(i / 8) % 2 === 0) || (i % 2 !== 0 && Math.floor(i / 8) % 2 !== 0)) {
       cell[i].classList.toggle('black')
     }
-    
+
   }
 };
+
 function createDisco() {
-  for
-  (let x = 0; x < 64; x++) {
-    let random = (Math.floor(Math.random()*6)+1)
+  for (let x = 0; x < 64; x++) {
+    let random = (Math.floor(Math.random() * 5) + 1);
     cell[x].classList.toggle(`disco-color${random}`);
-    
-  } 
+
+  }
 };
+
 function createLaby() {
-  
+
   const labyrinth = [
-    1,0,1,1,1,1,1,1,
-    1,0,0,1,0,1,0,1,
-    1,0,0,0,0,1,0,1,
-    1,1,1,0,0,1,0,1,
-    1,0,0,0,0,1,0,1,
-    1,0,1,1,1,1,0,1,
-    1,0,0,0,0,0,0,1,
-    1,1,1,1,1,1,1,1,
-    ]
-   for(let l = 0; l < 64; l++){
-     
-     if(labyrinth[l] === 1){
-       cell[l].classList.toggle('black')
-     }
-   }
+    1, 0, 1, 1, 1, 1, 1, 1,
+    1, 0, 0, 1, 0, 1, 0, 1,
+    1, 0, 0, 0, 0, 1, 0, 1,
+    1, 1, 1, 0, 0, 1, 0, 1,
+    1, 0, 0, 0, 0, 1, 0, 1,
+    1, 0, 1, 1, 1, 1, 0, 1,
+    1, 0, 0, 0, 0, 0, 0, 1,
+    1, 1, 1, 1, 1, 1, 1, 1,
+  ]
+  for (let l = 0; l < 64; l++) {
+  
+    if (labyrinth[l] === 1) {
+      cell[l].classList.toggle('black')
+    }
+  }
 };
-// Les fonctions (appelées par les Event Listener) sont déclarées ici.
 
-/**************************************************************/
-/*                      Event listeners                       */
-/**************************************************************/
+function mouseDown(event) {
+  if (event.target.classList.contains('js-cell')) {
+    event.target.classList.remove('boom');
+    event.target.classList.add('push');
 
-// Les Event Listener sont déclarés ici.
-function onButtonDamier(){
-  
-  
-  createDamier();
+  }
+};
+
+function mouseUp(event) {
+  if (event.target.classList.contains('js-cell')) {
+    event.target.classList.remove('push');
+    event.target.classList.add('pull');
+
+  }
+};
+
+function dblClickBoom(event) {
+  if (event.target.classList.contains('js-cell')) {
+    event.target.classList.remove('push');
+    event.target.classList.remove('pull');
+    event.target.classList.add('boom')
+
+  }
+};
+
+function bobbyPop(event){
+  if(event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key === 'ArrowLeft' || event.key === 'ArrowRight'){
+    bobby.classList.add('visible')
+  }
 }
-function onButtonDisco(){
-  createDisco();
+
+function bobbyMove(event) {
+  if (event.key === 'ArrowUp' && bobbyPosition.y > 0) {
+    bobbyPosition.y--;
+  } else if (event.key === 'ArrowDown' && bobbyPosition.y < 7) {
+    bobbyPosition.y++;
+  } else if (event.key === 'ArrowLeft' && bobbyPosition.x > 0) {
+    bobbyPosition.x--;
+  } else if (event.key === 'ArrowRight' && bobbyPosition.x < 7) {
+    bobbyPosition.x++;
+  }
+  updateBobbyPosition();
 }
-function onButtonLabyrinth(){
-  createLaby();
+
+function updateBobbyPosition() {
+  bobby.style.top = `${bobbyPosition.y * 48}px`;
+  bobby.style.left = `${bobbyPosition.x * 48}px`;
 }
-/**************************************************************/
-/*                       Main Program                         */
-/**************************************************************/
 
-// IMPORTANT Rappel : Pas de traitement ici,
-// uniquement les déclarations des Event Listener.
+function moveCat() {
+  let direction = Math.floor(Math.random() * 4);
+  if (direction === 0 && catPosition.y > 0) {
+    catPosition.y--;
+  } else if (direction === 1 && catPosition.y < 7) {
+    catPosition.y++;
+  } else if (direction === 2 && catPosition.x > 0) {
+    catPosition.x--;
+  } else if (direction === 3 && catPosition.x < 7) {
+    catPosition.x++;
+  }
+  updateCatPosition();
+}
 
-document.addEventListener('DOMContentLoaded', () => {
+function updateCatPosition() {
+  cat.style.top = `${catPosition.y * 48}px`;
+  cat.style.left = `${catPosition.x * 48}px`;
+}
+  // Les fonctions (appelées par les Event Listener) sont déclarées ici.
 
-  console.log('Damier');
+  /**************************************************************/
+  /*                      Event listeners                       */
+  /**************************************************************/
 
-  // 1. Lorsque l'utilisateur clique sur le bouton "js-damier",
-  // Afficher un damier dans la grille
-  buttonDamier.addEventListener('click', onButtonDamier);
-  // TIP : Ajouter la classe .black sur les cases concernées
+  // Les Event Listener sont déclarés ici.
+  function onButtonDamier() {
+
+    clearCheckboard();
+    createDamier();
+  }
+
+  function onButtonDisco() {
+    clearCheckboard();
+    createDisco();
+  }
+
+  function onButtonLabyrinth() {
+    clearCheckboard();
+    createLaby();
+  }
+  /**************************************************************/
+  /*                       Main Program                         */
+  /**************************************************************/
+
+  // IMPORTANT Rappel : Pas de traitement ici,
+  // uniquement les déclarations des Event Listener.
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    console.log('Damier');
+
+    // 1. Lorsque l'utilisateur clique sur le bouton "js-damier",
+    // Afficher un damier dans la grille
+    buttonDamier.addEventListener('click', onButtonDamier);
+    // TIP : Ajouter la classe .black sur les cases concernées
 
 
-  // 2. Lorsque l'utilisateur clique sur le bouton "js-disco",
-  // Afficher un dancefloor de lumières dans la grille
-  buttonDisco.addEventListener('click', onButtonDisco);
-  // TIP : Ajouter les classes .color1, ... .color5 aléatoirement
+    // 2. Lorsque l'utilisateur clique sur le bouton "js-disco",
+    // Afficher un dancefloor de lumières dans la grille
+    buttonDisco.addEventListener('click', onButtonDisco);
+    // TIP : Ajouter les classes .color1, ... .color5 aléatoirement
 
 
-  // 3. Lorsque l'utilisateur clique sur le bouton "js-labyrinth",
-  // Afficher le motif présent sur le bouton dans la grille
-  buttonLaby.addEventListener('click', onButtonLabyrinth);
-  // TIP : Ajouter la classe .black sur les cases concernées
+    // 3. Lorsque l'utilisateur clique sur le bouton "js-labyrinth",
+    // Afficher le motif présent sur le bouton dans la grille
+    buttonLaby.addEventListener('click', onButtonLabyrinth);
+    // TIP : Ajouter la classe .black sur les cases concernées
 
 
-  // 4. Lorsque l'utilisateur enfonce le bouton de la souris sur une case (classe "js-cell"),
-  // Afficher "push" sur fond jaune (utiliser la classe "push")
-  // Puis, lorsqu'il relâche le bouton, 
-  // afficher "pull" sur fond orange (utiliser la classe "pull")
-  // Enfin, s'il double clique sur la case,
-  // afficher "boom" sur fond rouge (utiliser la classe "boom")
+    // 4. Lorsque l'utilisateur enfonce le bouton de la souris sur une case (classe "js-cell"),
+    // Afficher "push" sur fond jaune (utiliser la classe "push")
+    document.addEventListener('mousedown', mouseDown);
+    document.addEventListener('mouseup', mouseUp);
+    document.addEventListener('dblclick', dblClickBoom)
+    // Puis, lorsqu'il relâche le bouton, 
+    // afficher "pull" sur fond orange (utiliser la classe "pull")
+    // Enfin, s'il double clique sur la case,
+    // afficher "boom" sur fond rouge (utiliser la classe "boom")
 
 
-  // 5. Lorsque l'utilisateur appuie sur une des 4 flèches du clavier,
-  // Afficher bobby et le déplacer sur le grille (de case en case)
+    // 5. Lorsque l'utilisateur appuie sur une des 4 flèches du clavier,
+    // Afficher bobby et le déplacer sur le grille (de case en case)
+    document.addEventListener('keydown', bobbyPop);
+    document.addEventListener('keydown', bobbyMove);
+    // TIP : Ajouter la classe visible sur la div ayant l'id "bobby"
+    // Le déplacer de case en case
+    // dans la direction de la flèche appuyée
 
-  // TIP : Ajouter la classe visible sur la div ayant l'id "bobby"
-  // Le déplacer de case en case
-  // dans la direction de la flèche appuyée
 
+    // 6. Chaque seconde, un chat se déplace aléatoirement sur les cases du plateau
+    setInterval(moveCat, 1000);
+    // TIP : Ajouter un timer qui déplace la div ayant l'id "cat" d'une case
+    // dans une direction aléatoire toutes les secondes
 
-  // 6. Chaque seconde, un chat se déplace aléatoirement sur les cases du plateau
-
-  // TIP : Ajouter un timer qui déplace la div ayant l'id "cat" d'une case
-  // dans une direction aléatoire toutes les secondes
-
-});
+  });
